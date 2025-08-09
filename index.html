@@ -1,35 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Income & Expense Report</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-        th { background: #f4f4f4; }
-        .income { color: green; }
-        .expense { color: red; }
-    </style>
+<meta charset="UTF-8">
+<title>Income & Expense Report</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 40px;
+        color: #333;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #2c3e50;
+    }
+    .table-container {
+        max-width: 900px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        margin-bottom: 40px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f1f1f1;
+        font-weight: bold;
+    }
+    .income {
+        color: green;
+        font-weight: bold;
+    }
+    .expense {
+        color: red;
+        font-weight: bold;
+    }
+    .summary {
+        text-align: center;
+        padding: 15px;
+        background-color: #e9ecef;
+        border-radius: 8px;
+        font-size: 18px;
+    }
+    .highlight {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+</style>
 </head>
 <body>
-    <h1>Income & Expense Report</h1>
+
+<h1>Income & Expense Report</h1>
+
+<div class="table-container">
+    <h2>Expenses</h2>
     <table>
         <tr>
             <th>Date</th>
+            <th>Event</th>
             <th>Description</th>
-            <th>Amount</th>
+            <th>Amount (₹)</th>
         </tr>
         <tr>
-            <td>2025-08-01</td>
-            <td>Donation</td>
-            <td class="income">+ ₹5,000</td>
+            <td>15-Aug-2024</td>
+            <td>Independence Day Celebration</td>
+            <td>Printing</td>
+            <td class="expense">3,500</td>
         </tr>
         <tr>
-            <td>2025-08-03</td>
-            <td>Event Cost</td>
-            <td class="expense">- ₹1,200</td>
+            <td></td>
+            <td></td>
+            <td>18 Mtrs Cloth</td>
+            <td class="expense">1,080</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Stationery and Others</td>
+            <td class="expense">1,700</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Chocolates</td>
+            <td class="expense">910</td>
+        </tr>
+        <tr>
+            <th colspan="3">Total Expense</th>
+            <th class="expense">₹7,190</th>
         </tr>
     </table>
+</div>
+
+<div class="table-container">
+    <h2>Income</h2>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Transaction ID</th>
+            <th>Amount (₹)</th>
+        </tr>
+        <tr>
+            <td>16-Aug-2024</td>
+            <td>Raghavendra Bhat</td>
+            <td>422943081650</td>
+            <td class="income">2,000</td>
+        </tr>
+        <tr>
+            <td>16-Aug-2024</td>
+            <td>Naveen Kumar</td>
+            <td>422912816492</td>
+            <td class="income">2,000</td>
+        </tr>
+        <tr>
+            <td>16-Aug-2024</td>
+            <td>Priya Pream</td>
+            <td>422948342361</td>
+            <td class="income">2,000</td>
+        </tr>
+        <tr>
+            <td>16-Aug-2024</td>
+            <td>Sheeja K John</td>
+            <td>Cash</td>
+            <td class="income">910</td>
+        </tr>
+        <tr>
+            <td>16-Aug-2024</td>
+            <td>Shibu K George</td>
+            <td>Cash</td>
+            <td class="income">2,000</td>
+        </tr>
+        <tr>
+            <td>16-Aug-2024</td>
+            <td>Vinod Kumar / Usha</td>
+            <td>422960429295</td>
+            <td class="income">2,000</td>
+        </tr>
+        <tr>
+            <th colspan="3">Total Income</th>
+            <th class="income">₹10,910</th>
+        </tr>
+    </table>
+</div>
+
+<div class="table-container summary">
+    <div class="highlight">Balance: ₹3,720</div>
+</div>
+
 </body>
 </html>
