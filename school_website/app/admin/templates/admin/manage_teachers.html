@@ -1,0 +1,57 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <h1>Add Teacher</h1>
+        <form action="{{ url_for('admin.manage_teachers') }}" method="post" enctype="multipart/form-data" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.name.label }}
+                {{ form.name(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.subject.label }}
+                {{ form.subject(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.qualifications.label }}
+                {{ form.qualifications(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.photo.label }}
+                {{ form.photo(class="form-control-file") }}
+            </div>
+            <p>{{ form.submit(class="btn btn-primary") }}</p>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h1>Existing Teachers</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Qualifications</th>
+                    <th>Photo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in teachers %}
+                <tr>
+                    <td>{{ teacher.name }}</td>
+                    <td>{{ teacher.subject }}</td>
+                    <td>{{ teacher.qualifications }}</td>
+                    <td><img src="{{ url_for('static', filename='uploads/' + teacher.photo) }}" width="50"></td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

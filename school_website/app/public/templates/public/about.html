@@ -1,0 +1,21 @@
+{% extends 'public/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>About Us</h1>
+        <p>Information about the school.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Principal's Message</h2>
+        <p>{{ principal_message.message if principal_message else 'Message not available.' }}</p>
+    </div>
+    <div class="col-md-6">
+        <h2>Vice Principal's Message</h2>
+        <p>{{ vp_message.message if vp_message else 'Message not available.' }}</p>
+    </div>
+</div>
+{% endblock %}

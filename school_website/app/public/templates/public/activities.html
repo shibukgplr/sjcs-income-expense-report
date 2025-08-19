@@ -1,0 +1,24 @@
+{% extends 'public/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>Activities & Events</h1>
+    </div>
+</div>
+
+<div class="row">
+    {% for event in events %}
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{{ url_for('static', filename='uploads/' + event.photo) }}" class="card-img-top" alt="{{ event.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ event.title }}</h5>
+                <p class="card-text">{{ event.description }}</p>
+                <p class="card-text"><small class="text-muted">Date: {{ event.date.strftime('%Y-%m-%d') }}</small></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

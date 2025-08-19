@@ -1,0 +1,30 @@
+{% extends 'public/base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Our School!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('public.about') }}" role="button">Learn more</a>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Latest News</h2>
+        {% for item in news %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.content }}</p>
+                <p class="card-text"><small class="text-muted">Posted on {{ item.created_at.strftime('%Y-%m-%d') }}</small></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-4">
+        <h2>Events</h2>
+        <p>Upcoming events will be listed here.</p>
+    </div>
+</div>
+{% endblock %}
