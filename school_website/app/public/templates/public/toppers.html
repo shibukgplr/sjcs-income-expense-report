@@ -1,0 +1,24 @@
+{% extends 'public/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>School Toppers</h1>
+    </div>
+</div>
+
+<div class="row">
+    {% for topper in toppers %}
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{{ url_for('static', filename='uploads/' + topper.photo) }}" class="card-img-top" alt="{{ topper.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ topper.name }}</h5>
+                <p class="card-text">Year: {{ topper.year }}</p>
+                <p class="card-text">Percentage: {{ topper.percentage }}%</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

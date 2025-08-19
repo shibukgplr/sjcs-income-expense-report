@@ -1,0 +1,43 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <h1>Add News</h1>
+        <form action="{{ url_for('admin.manage_news') }}" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.title.label }}
+                {{ form.title(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.content.label }}
+                {{ form.content(class="form-control", rows=5) }}
+            </div>
+            <p>{{ form.submit(class="btn btn-primary") }}</p>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h1>Existing News</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in all_news %}
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
